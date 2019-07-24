@@ -1,66 +1,53 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 
-export default function Form() {
+function Form() {
+    const [formState, setFormState] = useState({
+        name: '',
+        email: '',
+        role: '',
+    })
 
-  const [formState, setFormState] = useState({
-   name:'',
-   email: '',
-   role:','
-  });
+ function submitHandler (event) {
+     event.preventDefault();
+     console.log(formState)
+ };
 
-  function changeHandler(event) {
-    console.log("changed text", event.target.name);
-    setFormState({ ...formState, [event.target.name]: event.target.value });
-  }
-  function submitHandler(event) {
-    event.preventDefault();
-    console.log("Here you go:", formState);
-  }
+ function changeHandler (event) {
+   console.log('GUUD', formState)
+     setFormState({...formState, [event.target.name]: event.target.value});
+ };
 
   return (
-    <div className="App">
-    <form onSubmit={submitHandler}>
-        <legend>Sign up</legend>
-        <div className="username">
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              placeholder="John Smith"
+      <div className='form'>
+        <form onSubmit={submitHandler}>
+          <label>  Name:
+            <input 
+              name='name'
+              type='text'
+              placeholder= 'Name'
               onChange={changeHandler}
-            />
+            />    
           </label>
-        </div>
-       <div className='email'>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            placeholder="email@email.com"
-            onChange={changeHandler}
-          />
-        </label>
-        </div>  
-        <div className='role'>
-        <label>
-          Role:
-          <input
-            type="text"
-            name="role"
-            placeholder="UX Designer"
-            onChange={changeHandler}
-          />
-        </label>
-        </div>           
-        <div className='agree'>
-          <h5>Click to agree to terms and conditions</h5>
-          <input type='checkbox'>
-          </input>
-        </div>
-        <button type="submit">Submit</button> 
-    </form>
-  </div>
-);
+          <label>  Email: 
+            <input 
+              name='email'
+              type='email'
+              placeholder='Email'
+              onChange={changeHandler}
+            />    
+          </label>
+          <label>  Role:  
+            <input 
+              name='role'
+              type='text'
+              placeholder='Role'
+              onChange={changeHandler}
+            />    
+            </label>
+            <button type='submit'>Submit</button>
+        </form>    
+      </div>
+  )
 }
+
+export default Form; 
