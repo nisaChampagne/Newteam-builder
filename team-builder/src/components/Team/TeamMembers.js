@@ -1,8 +1,17 @@
-import React from 'react';
-import Member from './Member';
+import React from "react";
 
-export default function TeamMembers(props){
-    {props.members.map(member => (
-       <Member member={member} />
-    ))};
-}
+
+const TeamMembers = (props) => {
+
+
+  return (
+    <div className = "team-card">
+      <p>Name: {props.name}</p>
+      <p>Email: {props.email}</p>
+      <p>Role: {props.role}</p>
+      <button className="edit-button">Edit</button>
+    </div>
+  );
+};
+
+export default TeamMembers;

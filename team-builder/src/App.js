@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import Form from './components/Form/Form';
-import Member from  './components/Team/Member';
+import TeamMembers from './components/Team/TeamMembers'
+import TeamData from './components/Team/TeamData';
+
 import './App.css';
 
-export default function App() {
-  const [team, setTeam ] = useState({name: '',email: '',role: ''});
-  
 
- 
+function App() {
 
+  const [member, setMember] = useState('user')
 
 
   return (
     <div className="App">
-      <h2>React Form </h2>
-      <Form  />
-      <Member />
+      <Form
+        member={member}
+        setMember={setMember}
+       />
+      <TeamMembers
+        TeamData={TeamData}
+       />
     </div>
   );
 }
 
-
+export default App;

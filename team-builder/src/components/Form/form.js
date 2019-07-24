@@ -1,53 +1,72 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
-function Form() {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        role: '',
-    })
+export default function NewMemberForm(props) {
 
- function submitHandler (event) {
-     event.preventDefault();
-     console.log(formState)
- };
 
- function changeHandler (event) {
-   console.log('GUUD', formState)
-     setFormState({...formState, [event.target.name]: event.target.value});
- };
+  console.log('form props', props);
+  const [teamMember, setTeamMember] = useState({
+    name: "",
+    email: "",
+    role: ""
+  });
+
+
+  const submitHandler = event => {
+    event.preventDefault();
+    console.log("teamMember", teamMember);
+  };
+
+  const changeHandler = event => {
+    console.log(teamMember);
+    setTeamMember({
+      ...teamMember,
+      [event.target.name]: event.target.value
+    });
+
+  };
 
   return (
-      <div className='form'>
-        <form onSubmit={submitHandler}>
-          <label>  Name:
-            <input 
-              name='name'
-              type='text'
-              placeholder= 'Name'
-              onChange={changeHandler}
-            />    
-          </label>
-          <label>  Email: 
-            <input 
-              name='email'
-              type='email'
-              placeholder='Email'
-              onChange={changeHandler}
-            />    
-          </label>
-          <label>  Role:  
-            <input 
-              name='role'
-              type='text'
-              placeholder='Role'
-              onChange={changeHandler}
-            />    
+    <div>
+      <form onSubmit={submitHandler}>
+        <fieldset>
+          <legend>Signup</legend>
+          <div className="form-group row">
+            <label>
+              Team Member:
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Team Member Name"
+                onChange={changeHandler}
+              />
             </label>
-            <button type='submit'>Submit</button>
-        </form>    
-      </div>
+          </div>
+          <div className="form-group">
+            <label>
+              Email:
+              <input
+                type="text"
+                name="email"
+                placeholder="Enter Email"
+                onChange={changeHandler}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label>
+              Role:
+              <input
+                type="text"
+                name="role"
+                placeholder="Role"
+                onChange={changeHandler}
+              />
+            </label>
+          </div>
+          <button type="submit" className="submit-button">Submit</button>
+        </fieldset>
+      </form>
+    </div>
   )
 }
-
-export default Form; 

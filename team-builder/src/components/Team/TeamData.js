@@ -2,37 +2,38 @@ import React from 'react';
 
 
 
-export const TeamData = [
+const TeamData = [
 
 
-    {   Name: 'Ariam Valencia',
-        Occupation: 'Tutor',
-        Hobby: 'Math'
+    {   name: 'Ariam Valencia',
+        email: 'Tutor',
+        role: 'Math'
     },
 
 
-    {   Name: 'Cody Kirk',
-        Occupation: 'Security',
-        Hobby: 'Gaming'
+    {   name: 'Cody Kirk',
+        email: 'Security',
+        role: 'Gaming'
     },
 
-    {   Name: 'Emmy Arend',
-        Occupation: 'Hair Stylist',
-        Hobby: 'Crafts'
+    {   name: 'Emmy Arend',
+        email: 'Hair Stylist',
+        role: 'Crafts'
     },
 
-    {   Name: 'Angel Almanza',
-        Occupation: 'Security Boss',
-        Hobby: "Cars"
+    {   name: 'Angel Almanza',
+        email: 'Security Boss',
+        role: "Cars"
     },
 
-    {   Name: 'Nisa Champagne',
-        Occupation: 'Student',
-        Hobby: 'Art'
+    {   name: 'Nisa Champagne',
+        email: 'Student',
+        role: 'Art'
     },
 
-    {   Name: 'Rikki Champagne',
-        Occupation: 'Student',
-        Hobby: 'Fashion'
+    {   name: 'Rikki Champagne',
+        email: 'Student',
+        role: 'Fashion'
     },
 ]
+export default TeamData;
