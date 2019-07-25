@@ -11,7 +11,7 @@ function App() {
 
   const [editing, setEditing] = useState(false)
 
-  const initialFormState = {name:'', email: '', role: ''}
+  const initialFormState = {id: null, name:'', email: '', role: ''}
 
   const [currentMember, setCurrentMember ]= useState(initialFormState)
 
@@ -39,10 +39,21 @@ function App() {
   return (
     <div className="App">
       <h1>SIGN UP FORM</h1>
-      <Form setter={addMember} editing={editing}  setEditing={setEditing}  currentMember={currentMember}  updateMember={updateMember} members={members} setMembers={setMembers}/>
+      <Form setter={addMember} 
+            editing={editing}  
+            setEditing={setEditing} 
+            currentMember={currentMember} 
+            updateMember={updateMember} 
+            members={members}
+            setMembers={setMembers}/>
       <div className='cards'>
       {members.map(member => {
-            return <TeamMembers key={member.name} member={member} updateMember={updateMember} editRow={editRow} deleteMember={deleteMember} />;
+            return <TeamMembers 
+            key={member.name} 
+            member={member} 
+            updateMember={updateMember} 
+            editRow={editRow} 
+            deleteMember={deleteMember} />;
           })}
       </div>
     </div>
