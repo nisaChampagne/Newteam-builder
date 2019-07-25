@@ -1,17 +1,16 @@
 import React from "react";
 
 
-const TeamMembers = (props) => {
-
+export default function TeamMembers(props) {
+  const member = props.member;
 
   return (
-    <div className = "team-card">
-      <p>Name: {props.name}</p>
-      <p>Email: {props.email}</p>
-      <p>Role: {props.role}</p>
-      <button className="edit-button">Edit</button>
-    </div>
+      <div className='member-cards'>
+          <h4>{member.name}</h4>
+          <p>Email: {member.email}</p>
+          <p>Role: {member.role}</p>
+        <button>Edit</button>
+        <button>Remove</button>
+      </div>
   );
-};
-
-export default TeamMembers;
+} 

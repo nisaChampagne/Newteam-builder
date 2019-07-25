@@ -1,39 +1,36 @@
-import React from 'react';
-
-
 
 const TeamData = [
 
-
-    {   name: 'Ariam Valencia',
-        email: 'Tutor',
-        role: 'Math'
+ 
+    {  
+         name: 'Ariam Valencia',
+        email: 'ariam@ariam.net',
+        role: 'Math Teacher'
     },
 
 
-    {   name: 'Cody Kirk',
-        email: 'Security',
-        role: 'Gaming'
+    {  
+         name: 'Cody Kirk',
+        email: 'cody@cody.com',
+        role: 'Security'
     },
 
-    {   name: 'Emmy Arend',
-        email: 'Hair Stylist',
-        role: 'Crafts'
+
+
+    {  
+         name: 'Emmy Arend',
+        email: 'emmy@emmy.com',
+        role: 'HairStylist'
     },
 
-    {   name: 'Angel Almanza',
-        email: 'Security Boss',
-        role: "Cars"
-    },
 
-    {   name: 'Nisa Champagne',
-        email: 'Student',
-        role: 'Art'
-    },
 
-    {   name: 'Rikki Champagne',
-        email: 'Student',
-        role: 'Fashion'
+    { 
+          name: 'Rikki Champagne',
+        email: 'rikki@rikki.com',
+        role: 'Fashion Designer'
     },
 ]
 export default TeamData;
+
+////I get this

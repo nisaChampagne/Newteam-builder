@@ -2,9 +2,22 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
+.member-cards{
+  border: 2px solid grey;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px grey;
+}
 

@@ -1,70 +1,72 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useEffect } from "react";
 
-export default function NewMemberForm(props) {
+export default function Form(props) {
 
 
-  console.log('form props', props);
-  const [teamMember, setTeamMember] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     role: ""
   });
+  
+  const setter=props.setter;
 
 
-  const submitHandler = event => {
+  function submitHandler(event){
     event.preventDefault();
-    console.log("teamMember", teamMember);
+    console.log("form", setForm);
+    setter(form)
+
   };
 
-  const changeHandler = event => {
-    console.log(teamMember);
-    setTeamMember({
-      ...teamMember,
-      [event.target.name]: event.target.value
-    });
+  function changeHandler(event) {
+    console.log(form);
+    setForm({ ...form, [event.target.name]: event.target.value });
 
   };
 
   return (
-    <div>
+    <div className='card'>
       <form onSubmit={submitHandler}>
         <fieldset>
-          <legend>Signup</legend>
-          <div className="form-group row">
+        <legend>Add to the Team!</legend>
+          <div className='name'>
             <label>
               Team Member:
               <input
                 type="text"
                 name="name"
+                value={form.name}
                 placeholder="Enter Team Member Name"
                 onChange={changeHandler}
               />
             </label>
           </div>
-          <div className="form-group">
+          <div className="email">
             <label>
               Email:
               <input
                 type="text"
                 name="email"
+                value={form.email}
                 placeholder="Enter Email"
                 onChange={changeHandler}
               />
             </label>
           </div>
-          <div className="form-group">
+          <div className="role">
             <label>
               Role:
               <input
                 type="text"
                 name="role"
                 placeholder="Role"
+                value={form.role}
                 onChange={changeHandler}
               />
             </label>
           </div>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" >Submit</button>
         </fieldset>
       </form>
     </div>
