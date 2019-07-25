@@ -9,8 +9,8 @@ export default function TeamMembers(props) {
           <h4>{member.name}</h4>
           <p>Email: {member.email}</p>
           <p>Role: {member.role}</p>
-        <button>Edit</button>
-        <button>Remove</button>
+        <button onClick={() => props.editRow(member)}>Edit</button>
+        <button onClick={() => props.deleteMember(member.id)}>Delete</button>
       </div>
   );
 } 

@@ -8,23 +8,6 @@ const TeamData = [
         role: 'Math Teacher'
     },
 
-
-    {  
-         name: 'Cody Kirk',
-        email: 'cody@cody.com',
-        role: 'Security'
-    },
-
-
-
-    {  
-         name: 'Emmy Arend',
-        email: 'emmy@emmy.com',
-        role: 'HairStylist'
-    },
-
-
-
     { 
           name: 'Rikki Champagne',
         email: 'rikki@rikki.com',

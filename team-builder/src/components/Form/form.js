@@ -11,11 +11,14 @@ export default function Form(props) {
   
   const setter=props.setter;
 
+  useEffect(() => {
+    setForm(props.currentMember)
+  }, [props])
 
   function submitHandler(event){
     event.preventDefault();
     console.log("form", setForm);
-    setter(form)
+    setter(form)////adding member to the form ?
 
   };
 
